@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Color Scheme Picker</title>
+  </head>
+  <body>
+    <div id="container">
+      <form id="color-form">
+        <input id="color-picked" type="color" />
+        <select id="scheme-picked" name="scheme-choice">
+          <option value="monochrome">Monochrome</option>
+          <option value="monochrome-dark">Monochrome-dark</option>
+          <option value="monochrome-light">Monochrome-light</option>
+          <option value="analogic ">Analogic</option>
+          <option value="complement ">Complement</option>
+          <option value="analogic-complement">Analogic-complement</option>
+          <option value="triad">triad</option>
+          <option value="quad">Quad</option>
+        </select>
+        <button>Get color scheme</button>
+      </form>
+      <div id="color-container">
+        <div id="premiere-couleur" class="color-font"></div>
+        <div id="deuxieme-couleur" class="color-font"></div>
+        <div id="troisieme-couleur" class="color-font"></div>
+        <div id="quatrieme-couleur" class="color-font"></div>
+        <div id="cinquieme-couleur" class="color-font"></div>
+      </div>
+      <div id="color-container-hex">
+        <div id="premiere-couleur-hex" class="hex-color"></div>
+        <div id="deuxieme-couleur-hex" class="hex-color"></div>
+        <div id="troisieme-couleur-hex" class="hex-color"></div>
+        <div id="quatrieme-couleur-hex" class="hex-color"></div>
+        <div id="cinquieme-couleur-hex" class="hex-color"></div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
