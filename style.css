@@ -63,7 +63,14 @@ button:hover {
   align-items: center;
   justify-content: center;
 }
-
+#color-container div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+div span {
+  font-weight: bold;
+}
 /* Pour les petits écrans */
 @media only screen and (max-width: 768px) {
   form#color-form {
