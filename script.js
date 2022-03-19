@@ -15,13 +15,41 @@ async function getColors(couleur, scheme) {
   const colors = data.colors;
   displayColors(colors);
   // return data.colors;
+  const colorFont = document.getElementsByClassName("color-font");
+  const colorHex = document.getElementsByClassName("hex-color");
+  for (const hexcolor of colorHex) {
+    hexcolor.addEventListener("dblclick", (event) => {
+      navigator.clipboard
+        .writeText(event.target.innerText)
+        .then(() => {
+          alert("successfully copied");
+        })
+        .catch(() => {
+          alert("something went wrong");
+        });
+    });
+  }
+  console.log(colorFont);
+  console.log(colorHex);
+  for (let i = 0; i < colorFont.length; i++) {
+    colorFont[i].addEventListener("dblclick", () => {
+      navigator.clipboard
+        .writeText(event.target.innerText)
+        .then(() => {
+          alert("successfully copied");
+        })
+        .catch(() => {
+          alert("something went wrong");
+        });
+    });
+  }
 }
 
 //function to display the colors
 function displayColors(colors) {
   let myColorsHtml = colors
     .map((color) => {
-      return `<div  class="color-font" style="background-color: ${color.hex.value}"><span>${color.hex.value}</span></div>`;
+      return `<div  class="color-font" style="background-color: ${color.hex.value}"><span class="hex-color">${color.hex.value}</span></div>`;
     })
     .join("");
   console.log(myColorsHtml);
@@ -47,20 +75,7 @@ document.getElementById("color-form").addEventListener("submit", (e) => {
 */
 
 //copy hexcolor
-const colorFont = document.querySelectorAll(".color-font");
-const colorHex = document.getElementsByClassName("hex-color");
-for (const hexcolor of colorHex) {
-  hexcolor.addEventListener("dblclick", () => {
-    navigator.clipboard.writeText(hexcolor.firstChild.innerHTML);
-  });
-}
-// console.log(colorFont);
-// console.log(colorHex);
-for (let i = 0; i < colorFont.length; i++) {
-  colorFont[i].addEventListener("dblclick", () => {
-    navigator.clipboard.writeText(colorHex[i].firstChild.innerHTML);
-  });
-}
+
 // colorFont.forEach((element) => {
 //   element.addEventListener("dblclick", () => {
 //     navigator.clipboard.writeText(colorHex[i].firstChild.innerHTML);
